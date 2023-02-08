@@ -1,8 +1,9 @@
 import express from "express";
 import configViewEngine from "./configs/ViewEngine";
+require ('dotenv').config()
 
-const app = express()
-const port = 3000
+const app = express();
+const port = process.env.PORT || 3000;
 
 configViewEngine(app)
 
@@ -15,5 +16,5 @@ app.get('/about', (req, res) => {
   })
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Example app listening on port http://localhost:${port}`)
 })

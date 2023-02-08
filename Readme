@@ -1,10 +1,10 @@
-install exspress: npm install --save-exact express@4.17.1
-install ejs- view engine : npm install --save-exact ejs@3.1.6
+-install exspress: npm install --save-exact express@4.17.1
+-install ejs- view engine : npm install --save-exact ejs@3.1.6
 
-config compiler: npm install --save-exact body-parser@1.19.0 nodemon@2.0.12 @babel/core@7.15.5 @babel/node@7.15.4 @babel/preset-env@7.15.6
-Sau khi cài babel, thì cần config babel qua file .babelrc
-Add script in file package.json: "start": "nodemon --exec babel-node src/server.js"
-Cấu hình đường dẫn ViewEngine: 
+-config compiler: npm install --save-exact body-parser@1.19.0 nodemon@2.0.12 @babel/core@7.15.5 @babel/node@7.15.4 @babel/preset-env@7.15.6
+-Sau khi cài babel, thì cần config babel qua file .babelrc
+-Add script in file package.json: "start": "nodemon --exec babel-node src/server.js"
+-Cấu hình đường dẫn ViewEngine:
     import express from "express";
     const configViewEngine = (app) => {
         app.set("view engine", "ejs");
@@ -12,3 +12,7 @@ Cấu hình đường dẫn ViewEngine:
     }
 
     export default configViewEngine;
+
+- Cài đặt dotenv: để nodejs có thể sử dụng được những câu lệnh của env
+       vd: npm i dotenv
+       import câu leenhj sau vào file để có the su dung duoc cac cau lenh cuar env: require ('dotenv').config(),
