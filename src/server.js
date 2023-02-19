@@ -2,6 +2,7 @@ import express from "express";
 import configViewEngine from "./configs/ViewEngine";
 import {adminWebRoute, initWebRoute} from "./routes/web";
 
+
 // config env
 require ('dotenv').config()
 
