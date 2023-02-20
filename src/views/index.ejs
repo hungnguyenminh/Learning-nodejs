@@ -9,7 +9,41 @@
 </head>
 <body>
     <h1>sssss</h1>
-    <%= dataUser %>
-    <img src="/images/image.png" />
+    <%= dataConver %>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <div>
+         <p>List User</p>
+         <table>
+           <tr>
+             <th>id</th>
+             <th>first name</th>
+             <th>last name</th>
+             <th>email</th>
+             <th>address</th>
+             <th>action</th>
+           </tr>
+           <% for(let i=0; i < dataUser.length; i++) { %>
+           <tr>
+             <td><%= dataUser[i].id %></td>
+             <td><%= dataUser[i].firstName %></td>
+             <td><%= dataUser[i].lastName %></td>
+             <td><%= dataUser[i].email %></td>
+             <td><%= dataUser[i].address %></td>
+             <td>
+                <a href="/detail/user/<%= dataUser[i].id %>">
+                    <button type="button">detail</button>
+                </a>
+                <button type="button">edit</button>
+                <button type="button">delete</button>
+             </td>
+           </tr>
+            <% } %>
+         </table>
+    </div>
 </body>
 </html>

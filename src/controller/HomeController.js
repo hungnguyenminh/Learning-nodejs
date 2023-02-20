@@ -8,7 +8,7 @@ let homeController = (req, res) => {
             // console.log(results); // results contains rows returned by server
             results.map((item, index) => {return data.push(item)})
 
-            return res.render('index.ejs', {dataUser: JSON.stringify(data)});
+            return res.render('index.ejs', {dataUser: data, dataConver: JSON.stringify(data)}, );
         }
     );
 }

@@ -7,7 +7,7 @@ import {adminWebRoute, initWebRoute} from "./routes/web";
 require ('dotenv').config()
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 // config view engine
 configViewEngine(app)
