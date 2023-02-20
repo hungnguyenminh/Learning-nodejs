@@ -1,18 +1,19 @@
-import connection from "../configs/connectDB";
-let homeController = (req, res) => {
-    let data = [];
-    connection.query(
-        'SELECT * FROM `users` ',
-        function(err, results, fields) {
-            console.log("check mysql =>>")
-            // console.log(results); // results contains rows returned by server
-            results.map((item, index) => {return data.push(item)})
+import pool from "../configs/connectDB";
+let homeController = async (req, res) => {
+    const [rows, fields] = await pool.execute('SELECT * FROM `users` ');
 
-            return res.render('index.ejs', {dataUser: data, dataConver: JSON.stringify(data)}, );
-        }
-    );
+    return res.render('index.ejs', {dataUser: rows, dataConver: JSON.stringify(rows)}, );
+}
+
+let getDetailPage = async (req, res) => {
+    let userId = req.params.userId;
+    const [row, fields] = await pool.execute('SELECT * FROM `users` WHERE id= ?', [userId]);
+    console.log("check param req", req.params.userId);
+    // return res.send(JSON.stringify(row));
+    return res.render('Users/DetailUser.ejs', {detailInfo: row, detailString: JSON.stringify(row)})
 }
 
 module.exports =  {
-    homeController
+    homeController,
+    getDetailPage
 }

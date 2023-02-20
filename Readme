@@ -1,3 +1,9 @@
+1. Tài liệu tham khảo
+- EJS:
+- mysql2:
+- expressJS:
+
+2. setup
 -install exspress: npm install --save-exact express@4.17.1
 
 -install ejs- view engine : npm install --save-exact ejs@3.1.6
