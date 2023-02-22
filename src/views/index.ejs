@@ -34,16 +34,46 @@
              <td><%= dataUser[i].lastName %></td>
              <td><%= dataUser[i].email %></td>
              <td><%= dataUser[i].address %></td>
-             <td>
+             <td style="display: flex">
                 <a href="/detail/user/<%= dataUser[i].id %>">
                     <button type="button">detail</button>
                 </a>
-                <button type="button">edit</button>
-                <button type="button">delete</button>
+                 <form action="/edit-user/<%= dataUser[i].id %>" method="GET">
+                     <button type="submit">edit</button>
+                 </form>
+                 <form action="/delete-user" method="POST">
+                     <input name="userId" type="text" hidden value="<%= dataUser[i].id %>">
+                     <button type="submit">delete</button>
+                 </form>
              </td>
            </tr>
             <% } %>
          </table>
+         <div class="create-user-container">
+            <div class="create-user-main">
+                <b>Create User</b>
+                <form action="/create_user" method="POST">
+                    <div>
+                        <span>First Name</span>
+                        <input name="firstName" type="text" />
+                    </div>
+                    <div>
+                        <span>Last Name</span>
+                        <input name="lastName" type="text" />
+                    </div>
+                    <div>
+                        <span>Email</span>
+                        <input name="email" type="text" />
+                    </div>
+                    <div>
+                        <span>Address</span>
+                        <input name="address" type="text" />
+                    </div>
+                    <button class="button-submit" type="submit">Submit</button>
+                </form>
+
+            </div>
+         </div>
     </div>
 </body>
 </html>

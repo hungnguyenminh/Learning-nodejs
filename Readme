@@ -29,3 +29,5 @@
        import câu leenhj sau vào file để có the su dung duoc cac cau lenh cuar env: require ('dotenv').config().
 
 - Cài đặt mysql2: npm i --save-exact mysql2@2.3.0. Config tại: src/configs/connectDB.js
+
+- Express Validation

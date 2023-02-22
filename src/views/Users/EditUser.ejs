@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <%= dataConvert%>
+    <form action="/update-user" method="POST" style="margin-top: 30px">
+        <input type="text" hidden name="id" value="<%= data[0].id%>">
+        <div>
+            <span>First Name</span>
+            <input type="text" name="firstName" value="<%= data[0].firstName%>">
+        </div>
+        <div>
+            <span>Last Name</span>
+            <input type="text" name="lastName" value="<%= data[0].lastName%>">
+        </div>
+        <div>
+            <span>Email</span>
+            <input type="text" name="email" value="<%= data[0].email%>">
+        </div>
+        <div>
+            <span>Address</span>
+            <input type="text" name="address" value="<%= data[0].address%>">
+        </div>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
